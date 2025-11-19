@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Quincy Axe Company</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #000000;
+      color: #ffffff;
+      line-height: 1.5;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #333333;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      padding: 1.5rem 1rem 2rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .text-column {
+      order: 2; /* mobile: text after image */
+    }
+
+    .text-column h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .text-column p + p {
+      margin-top: 0.75rem;
+    }
+
+    .image-column {
+      order: 1; /* mobile: image before text */
+    }
+
+    .image-wrapper {
+      width: 100%;
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid #333333;
+    }
+
+    .image-wrapper img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    footer {
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.875rem;
+      border-top: 1px solid #333333;
+    }
+
+    /* Desktop / larger screens */
+    @media (min-width: 768px) {
+      main {
+        padding: 2.5rem 1.5rem 2.5rem;
+      }
+
+      .content {
+        flex-direction: row;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      .text-column {
+        order: 1; /* desktop: text on the left */
+        flex: 1;
+      }
+
+      .image-column {
+        order: 2; /* desktop: image on the right */
+        flex: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <h1>Quincy Axe Company</h1>
+    </header>
+
+    <main>
+      <div class="content">
+        <section class="text-column">
+          <h2>Throw. Compete. Connect.</h2>
+          <p>
+            Quincy Axe Company is your local spot for axe throwing, friendly competition,
+            and good times with friends, family, and coworkers. Whether it’s your first
+            throw or your hundredth, our coaches keep things safe, structured, and fun.
+          </p>
+          <p>
+            We host walk-ins, leagues, and private events for birthdays, team-building,
+            and celebrations of all sizes. Grab your crew, book a lane, and see why axe
+            throwing has become Quincy’s favorite way to blow off steam.
+          </p>
+        </section>
+
+        <aside class="image-column">
+          <div class="image-wrapper">
+            <!-- Replace the src below with your actual image path or URL -->
+            <img src="axe-throwing.jpg" alt="Guests throwing axes at Quincy Axe Company">
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      &copy; <span id="year"></span> Quincy Axe Company. All rights reserved.
+    </footer>
+  </div>
+
+  <script>
+    // Auto-set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
