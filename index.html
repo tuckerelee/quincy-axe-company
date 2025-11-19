@@ -15,7 +15,7 @@
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background: #000000;
       color: #ffffff;
-      line-height: 1.5;
+      line-height: 1.6;
       text-align: center;
     }
 
@@ -31,7 +31,7 @@
     }
 
     .logo-section img {
-      max-width: 260px;
+      max-width: 260px; /* Adjust logo size */
       width: 100%;
       height: auto;
     }
@@ -48,30 +48,14 @@
       display: flex;
       flex-direction: column;
       gap: 2rem;
-      max-width: 900px;
+      max-width: 700px;
       width: 100%;
       align-items: center;
     }
 
-    .text-column {
-      order: 2;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .text-column h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-    }
-
-    .text-column p + p {
-      margin-top: 0.75rem;
-    }
-
     .image-column {
-      order: 1;
       width: 100%;
-      max-width: 650px;
+      max-width: 700px; /* Make main image larger */
     }
 
     .image-wrapper {
@@ -87,34 +71,27 @@
       height: auto;
     }
 
+    .text-column {
+      max-width: 700px;
+      margin: 0 auto;
+      font-size: 1.2rem; /* Larger text */
+    }
+
+    .text-column h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .text-column p + p {
+      margin-top: 0.75rem;
+    }
+
     /* === Footer === */
     footer {
       padding: 1rem;
       text-align: center;
       font-size: 0.875rem;
       border-top: 1px solid #333333;
-    }
-
-    /* Desktop Layout */
-    @media (min-width: 768px) {
-      .content {
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 3rem;
-      }
-
-      .text-column {
-        order: 1;
-        flex: 1;
-        text-align: center;
-      }
-
-      .image-column {
-        order: 2;
-        flex: 1;
-        max-width: 600px;
-      }
     }
   </style>
 </head>
