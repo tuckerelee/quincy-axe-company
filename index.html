@@ -16,6 +16,7 @@
       background: #000000;
       color: #ffffff;
       line-height: 1.5;
+      text-align: center; /* center all text content */
     }
 
     .page {
@@ -25,37 +26,41 @@
     }
 
     header {
-      padding: 1.5rem 1rem;
-      text-align: center;
+      padding: 2rem 1rem;
       border-bottom: 1px solid #333333;
     }
 
-    header h1 {
-      font-size: 2rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+    header img {
+      max-width: 260px; /* Adjust logo size */
+      width: 100%;
+      height: auto;
     }
 
     main {
       flex: 1;
-      padding: 1.5rem 1rem 2rem;
+      padding: 2rem 1rem 2.5rem;
+      display: flex;
+      justify-content: center;
     }
 
     .content {
       display: flex;
       flex-direction: column;
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      gap: 2rem;
+      max-width: 900px;
+      width: 100%;
+      align-items: center;
     }
 
     .text-column {
       order: 2; /* mobile: text after image */
+      max-width: 600px;
+      margin: 0 auto;
     }
 
     .text-column h2 {
-      font-size: 1.25rem;
-      margin-bottom: 0.75rem;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
     }
 
     .text-column p + p {
@@ -64,12 +69,14 @@
 
     .image-column {
       order: 1; /* mobile: image before text */
+      width: 100%;
+      max-width: 650px; /* Make image bigger */
     }
 
     .image-wrapper {
       width: 100%;
       overflow: hidden;
-      border-radius: 8px;
+      border-radius: 10px;
       border: 1px solid #333333;
     }
 
@@ -86,26 +93,24 @@
       border-top: 1px solid #333333;
     }
 
-    /* Desktop / larger screens */
+    /* Desktop layout adjustments */
     @media (min-width: 768px) {
-      main {
-        padding: 2.5rem 1.5rem 2.5rem;
-      }
-
       .content {
         flex-direction: row;
         align-items: center;
+        justify-content: center;
         gap: 3rem;
       }
 
       .text-column {
-        order: 1; /* desktop: text on the left */
+        order: 1;
         flex: 1;
       }
 
       .image-column {
-        order: 2; /* desktop: image on the right */
+        order: 2;
         flex: 1;
+        max-width: 600px;
       }
     }
   </style>
@@ -113,11 +118,19 @@
 <body>
   <div class="page">
     <header>
-      <h1>Quincy Axe Company</h1>
+      <!-- Upload your logo as "logo.png", or change filename here -->
+      <img src="logo.png" alt="Quincy Axe Company Logo">
     </header>
 
     <main>
       <div class="content">
+        <aside class="image-column">
+          <div class="image-wrapper">
+            <!-- Replace with the correct filename if needed -->
+            <img src="axe-throwing.jpg" alt="Guests throwing axes at Quincy Axe Company">
+          </div>
+        </aside>
+
         <section class="text-column">
           <h2>Throw. Compete. Connect.</h2>
           <p>
@@ -131,13 +144,6 @@
             throwing has become Quincy’s favorite way to blow off steam.
           </p>
         </section>
-
-        <aside class="image-column">
-          <div class="image-wrapper">
-            <!-- Replace the src below with your actual image path or URL -->
-            <img src="axe-throwing.jpg" alt="Guests throwing axes at Quincy Axe Company">
-          </div>
-        </aside>
       </div>
     </main>
 
